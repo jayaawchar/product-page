@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .product {
+      background-color: white;
+      border: 1px solid #ddd;
+      margin: 10px;
+      padding: 15px;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .product img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .cart {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .cart:hover {
+      background-color: #555;
+    }
+
+    #cart-modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #ddd;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    #cart-modal ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #cart-modal li {
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #cart-modal button {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    #cart-modal button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Product Page</h1>
+  </header>
+
+  <div class="product-container">
+    <div class="product" id="product1">
+      <img src="https://m.media-amazon.com/images/I/51GBBOLDxrL._SY741_.jpg" alt="Product 1">
+         <!-- <img src="https://m.media-amazon.com/images/I/61POJqmSpoL._SY741_.jpg" alt="Product 1"> -->
+         <p>Colour:<b>Multicolour</b></p>
+      <h2>Cropkine Western Dresses for Women | Stylish Latest SolidLong Dresses|Long Gown |Kurti|Stylish Tops|Western Tops for Girls|Gown|Maxi Dress Crop top|Party Dress Black</h2>
+      <hr>
+      
+      <h3>Product details</h3>
+      
+      <p align="justify"><b>Material composition:</b>  Cotton Blend<br>
+        <b>Sleeve type:</b>  3/4 Sleeve<br>
+        <b>Length:</b>   Calf Length<br>
+        <b>Neck style:</b>  Round Neck<br>
+        <b>Pattern:</b>  Floral<br>
+       <b> Style:</b>Regular<br>
+        <b>Country of Origin:</b>India
+
+      </p>
+      <hr>
+
+      <p>Price: $20</p>
+      <button onclick="addToCart('Product 1', 20)">Add to Cart</button>
+    </div>/
+    <div class="product" id="product1">
+      <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQOS5kt9OFilY6UGdU6CnSnXAa_RgLnQJhD8GKmftnmQnpQWYPbu0MH0CNTvqt9CVXEwcQ0Wr1_nKVB5l4_WiPL9oPMdToSEw8Y1uNGJRSPUJEjGHC3pmD5jg" alt="Product 1">
+         <!-- <img src="https://m.media-amazon.com/images/I/61POJqmSpoL._SY741_.jpg" alt="Product 1"> -->
+         <p>Colour:<b>Pinksaree</b></p>
+      <h2>Nylon Mono Net Embroidered Pearl Work Sharara Suit With Dupatta
+      </h2>
+      <hr>
+      
+      <h3>Product details</h3>
+      
+      <p align="justify"><b>Top:</b> Nylon Mono Net<br>
+    <b>    Bottom:</b> Nylon Mono Net<br>
+       <b> Dupatta: </b>Nylon Mono Net<br>
+        <b>Work:</b> Zari Embroidery Work Sequence Work With Pearl Work<br>
+       <b> Inner:</b> Santoon<br>
+       <b> Type:</b>  Un-Stitched<br>
+
+      </p>
+      <hr>
+
+      <p>Price: $50</p>
+      <button onclick="addToCart('Product 1', 20)">Add to Cart</button>
+    </div>
+    
+
+    <div class="product" id="product2">
+      <img src="https://m.media-amazon.com/images/I/61Gd6C2JZxL._SY741_.jpg" alt="Product 2">
+      <!-- <img src="https://m.media-amazon.com/images/I/51M4q39yqRL._SY741_.jpg" alt="Product 2"> -->
+      <p>Colour: <b>Maroon.</b></p>
+      <h2>navimi Women's Satin Embroidered Semi Stitched Lehenga Choli With Net Duptta (1 Lehenga, 1 Choli, 1 Dupatta)</h2>
+      <hr>
+      <h3>Product details</h3>
+      <p align="justify"><b>Material composition:</b> Satin<br>
+        <b>Weave type:</b> Velvet<br>
+        <b>Finish type:</b>Semi-stitched<br>
+       <b> Pattern:</b>Embroidered<br>
+        <b>Care instructions:</b>Dry Clean Only:
+        </p>
+        <hr>
+      <p>Price: $30</p>
+      <button onclick="addToCart('Product 2', 30)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="cart" onclick="openCart()">View Cart</div>
+
+  <div id="cart-modal">
+    <h2>Shopping Cart</h2>
+    <ul id="cart-items">
+      <!-- Cart items will be dynamically added here -->
+    </ul>
+    <button onclick="closeCart()">Close Cart</button>
+  </div>
+
+  <script>
+    let cartItems = [];
+
+    function addToCart(productName, price) {
+      cartItems.push({ productName, price });
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById('cart-items');
+      cartList.innerHTML = '';
+
+      let total = 0;
+      cartItems.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `<span>${item.productName}</span><span>$${item.price}</span>`;
+        cartList.appendChild(listItem);
+        total += item.price;
+      });
+
+      document.getElementById('cart-items').innerHTML = cartItems.length === 0 ? '<li>No items in the cart</li>' : '';
+      document.getElementById('cart-items').innerHTML += `<li>Total: $${total}</li>`;
+    }
+
+    function openCart() {
+      updateCart();
+      document.getElementById('cart-modal').style.display = 'block';
+    }
+
+    function closeCart() {
+      document.getElementById('cart-modal').style.display = 'none';
+    }
+  </script>
+</body>
+
+</html>
